@@ -17,6 +17,7 @@ import {Formik} from 'formik';
 import {withObservables} from '@nozbe/watermelondb/react';
 import {Q} from '@nozbe/watermelondb';
 import database from '../DB/db';
+import mySync from '../DB/sync';
 
 const TodoScreen = ({route, user, todos}) => {
   const [height, setHeight] = useState(0);
@@ -189,6 +190,7 @@ const TodoScreen = ({route, user, todos}) => {
           </View>
         ))}
       </ScrollView>
+      <Button title="Sync with Server" onPress={mySync} />
     </View>
   );
 };
